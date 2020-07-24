@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "v1",
+  "properties": {
+    "accountSid": {
+      "kind": "property",
+      "displayName": "Twilio Account SID",
+      "group": "security",
+      "label": "security",
+      "required": true,
+      "type": "string",
+      "javaType": "java.lang.String",
+      "tags": [],
+      "deprecated": false,
+      "secret": true,
+      "componentProperty": false,
+      "description": "Twilio Account Sid that can be obtained from yout Twilio Account"
+    },
+    "password": {
+      "kind": "property",
+      "displayName": "Twilio Authorization Token",
+      "group": "security",
+      "label": "security",
+      "required": true,
+      "type": "string",
+      "javaType": "java.lang.String",
+      "tags": [],
+      "deprecated": false,
+      "secret": true,
+      "componentProperty": false,
+      "description": "Twilio Authorization Token that can be obtained from yout Twilio Account"
+    },
+    "username": {
+      "kind": "property",
+      "displayName": "Twilio Username",
+      "group": "security",
+      "label": "security",
+      "required": true,
+      "type": "string",
+      "javaType": "java.lang.String",
+      "tags": [],
+      "deprecated": false,
+      "secret": true,
+      "componentProperty": false,
+      "description": "Twilio username is the same value from Account Sid that can be obtained from yout Twilio Account"
+    }
+  },
+  "actions": [
+    {
+      "name": "Send a SMS",
+      "description": "Send a sms to Telephone Number.",
+      "id": "io.syndesis:twilio-send-sms",
+      "pattern": "To",
+      "actionType": "connector",
+      "descriptor": {
+        "componentScheme": "twilio",
+        "connectorCustomizers": [
+        	"io.syndesis.connector.twilio.TwilioSendSmsCustomizer"
+        ],
+        "inputDataShape": {
+          "kind": "java",
+          "type": "io.syndesis.connector.twilio.TwilioSmsModel"
+        },
+        "outputDataShape": {
+          "kind": "none"
+        },
+        "configuredProperties": {
+          "apiName": "message",
+          "methodName": "create"
+        },
+        "propertyDefinitionSteps": [
+            {
+                "description": "Phone Number To",
+                "name": "to",
+                "properties": {
+                    "to": {
+                        "componentProperty": false,
+                        "deprecated": false,
+                        "description": "The Twilio Destination Phone Number ",
+                        "displayName": "Twilio Destination PhoneNumber",
+                        "javaType": "String",
+                        "kind": "property",
+                        "required": true,
+                        "secret": false,
+                        "type": "string",
+                        "order": "1",
+                        "tags": [],
+                        "enum": []
+                    }
+                }
+            },
+            {
+                "description": "Phone Number From",
+                "name": "from",
+                "properties": {
+                    "from": {
+                        "componentProperty": false,
+                        "deprecated": false,
+                        "description": "The Twilio Source Phone Number",
+                        "displayName": "Twilio Source Phone Number",
+                        "javaType": "String",
+                        "kind": "property",
+                        "required": true,
+                        "secret": false,
+                        "type": "string",
+                        "order": "1",
+                        "tags": [],
+                        "enum": []
+                    }
+                }
+            },
+            {
+                "description": "SMS Body",
+                "name": "body",
+                "properties": {
+                    "body": {
+                        "componentProperty": false,
+                        "deprecated": false,
+                        "description": "The Twilio SMS Message Body",
+                        "displayName": "Twilio SMS Body",
+                        "javaType": "String",
+                        "kind": "property",
+                        "required": true,
+                        "secret": false,
+                        "type": "textarea",
+                        "order": "3",
+                        "tags": [],
+                        "enum": []
+                    }
+                }
+            }
+        ]
+      }
+    }
+  ]
+}
