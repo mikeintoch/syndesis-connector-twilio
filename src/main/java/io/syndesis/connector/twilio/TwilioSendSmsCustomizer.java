@@ -23,7 +23,6 @@ public class TwilioSendSmsCustomizer implements ComponentProxyCustomizer {
     public void beforeProducer(final Exchange exchange) throws IOException {
         final Message in = exchange.getIn();
         sms = (TwilioSmsModel)in.getBody();
-        
 
         if (sms.getFrom() != null) {
             in.setHeader("CamelTwilioFrom", new PhoneNumber(sms.getFrom()));
@@ -36,8 +35,5 @@ public class TwilioSendSmsCustomizer implements ComponentProxyCustomizer {
         if (sms.getBody() != null) {
             in.setHeader("CamelTwilioBody", sms.getBody());
         }
-        
-        
-        
     }
 }

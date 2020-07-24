@@ -67,68 +67,7 @@
           "apiName": "message",
           "methodName": "create"
         },
-        "propertyDefinitionSteps": [
-            {
-                "description": "Phone Number To",
-                "name": "to",
-                "properties": {
-                    "to": {
-                        "componentProperty": false,
-                        "deprecated": false,
-                        "description": "The Twilio Destination Phone Number ",
-                        "displayName": "Twilio Destination PhoneNumber",
-                        "javaType": "String",
-                        "kind": "property",
-                        "required": true,
-                        "secret": false,
-                        "type": "string",
-                        "order": "1",
-                        "tags": [],
-                        "enum": []
-                    }
-                }
-            },
-            {
-                "description": "Phone Number From",
-                "name": "from",
-                "properties": {
-                    "from": {
-                        "componentProperty": false,
-                        "deprecated": false,
-                        "description": "The Twilio Source Phone Number",
-                        "displayName": "Twilio Source Phone Number",
-                        "javaType": "String",
-                        "kind": "property",
-                        "required": true,
-                        "secret": false,
-                        "type": "string",
-                        "order": "1",
-                        "tags": [],
-                        "enum": []
-                    }
-                }
-            },
-            {
-                "description": "SMS Body",
-                "name": "body",
-                "properties": {
-                    "body": {
-                        "componentProperty": false,
-                        "deprecated": false,
-                        "description": "The Twilio SMS Message Body",
-                        "displayName": "Twilio SMS Body",
-                        "javaType": "String",
-                        "kind": "property",
-                        "required": true,
-                        "secret": false,
-                        "type": "textarea",
-                        "order": "3",
-                        "tags": [],
-                        "enum": []
-                    }
-                }
-            }
-        ]
+        "propertyDefinitionSteps": []
       }
     }
   ]
